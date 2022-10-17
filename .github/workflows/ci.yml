@@ -32,7 +32,7 @@ jobs:
         os:
           - macOS-latest
         toolchain:
-          - 1.64
+          - "1.60"
           - stable
     runs-on: ${{ matrix.os }}
     steps:
@@ -53,7 +53,7 @@ jobs:
         os:
           - ubuntu-20.04
         toolchain:
-          - 1.64
+          - "1.60"
           - beta
           - nightly
           - stable
@@ -64,6 +64,7 @@ jobs:
         with:
           components: clippy
           toolchain: ${{ matrix.toolchain }}
+      - run: sudo apt-get install -y apache2-utils
       - run: cargo clippy
       - run: cargo test --no-run
       - run: cargo test --no-fail-fast
