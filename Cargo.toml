@@ -1,6 +1,6 @@
 [package]
 authors = ["Joshua Potts <8704475+iamjpotts@users.noreply.github.com>"]
-description = "Placeholder"
+description = "Generate htpasswd files"
 edition = "2021"
 include = [ 
     "**/*.rs",
@@ -8,7 +8,13 @@ include = [
 license = "MPL-2.0"
 name = "passivized_htpasswd"
 repository = "https://github.com/iamjpotts/passivized_htpasswd"
-rust-version = "1.64"
-version = "0.0.1"
+rust-version = "1.60"
+version = "0.0.2"
 
 [dependencies]
+bcrypt = "0.13"
+indexmap = "1.9"
+thiserror = "1.0"
+
+[dev-dependencies]
+tempfile = "3.3"

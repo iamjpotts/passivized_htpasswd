@@ -10,7 +10,10 @@ yanked = "deny"
 # See https://www.mozilla.org/en-US/MPL/2.0/permissive-code-into-mpl/
 [licenses]
 allow = [
+    "BSD-3-Clause",
+    "MIT",
     "MPL-2.0",
+    "Unicode-DFS-2016",
 ]
 default = "deny"
 confidence-threshold = 1.0
