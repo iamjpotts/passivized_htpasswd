@@ -6,12 +6,9 @@ use thiserror;
 pub enum HtpasswdError {
 
     #[error("Bcrypt error: {0}")]
-    BCrypt(BcryptError)
+    BCrypt(#[from] BcryptError),
 
-}
+    #[error("Password hashing error: {0}")]
+    PwHash(#[from] pwhash::error::Error),
 
-impl From<BcryptError> for HtpasswdError {
-    fn from(other: BcryptError) -> Self {
-        Self::BCrypt(other)
-    }
 }
