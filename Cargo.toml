@@ -14,6 +14,9 @@ version = "0.0.2"
 [dependencies]
 bcrypt = "0.13"
 indexmap = "1.9"
+# This uses an older version of the blowfish crate than the current version of bcrypt does,
+# but the pwhash author has unreleased commits that update bcrypt.
+pwhash = "1.0"
 thiserror = "1.0"
 
 [dev-dependencies]
