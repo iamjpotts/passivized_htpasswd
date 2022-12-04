@@ -25,8 +25,13 @@ deny = [
     # License is non-trivial
     { name = "ring" },
 ]
-multiple-versions = "warn"
-skip = []
+multiple-versions = "deny"
+skip = [
+    # Conflict between bcrypt and pwhash
+    { name = "blowfish" },
+    # Conflict between bcrypt and pwhash
+    { name = "cipher" }
+]
 skip-tree = []
 wildcards = "warn"
 
