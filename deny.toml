@@ -30,7 +30,9 @@ skip = [
     # Conflict between bcrypt and pwhash
     { name = "blowfish" },
     # Conflict between bcrypt and pwhash
-    { name = "cipher" }
+    { name = "cipher" },
+    # Conflict between io-lifetimes and tempfile
+    { name = "windows-sys" },
 ]
 skip-tree = []
 wildcards = "warn"
