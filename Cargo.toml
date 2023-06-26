@@ -14,7 +14,7 @@ version = "0.0.4-alpha"
 
 [dependencies]
 bcrypt = "0.14"
-indexmap = "1.9"
+indexmap = "2.0"
 # This uses an older version of the blowfish crate than the current version of bcrypt does,
 # but the pwhash author has unreleased commits that update bcrypt.
 pwhash = "1.0"
