@@ -1,7 +1,7 @@
 [advisories]
 ignore = []
 notice = "deny"
-unmaintained = "warn"
+unmaintained = "deny"
 vulnerability = "deny"
 yanked = "deny"
 
@@ -27,15 +27,17 @@ deny = [
 ]
 multiple-versions = "deny"
 skip = [
+    # Transitive dependency of both redox_syscall and rustix (rustix has newer).
+    #
+    # Only one version of bitflags ultimately gets compiled in due to OS-based feature flags in tempfile.
+    { name = "bitflags" },
     # Conflict between bcrypt and pwhash
     { name = "blowfish" },
     # Conflict between bcrypt and pwhash
     { name = "cipher" },
-    # Conflict between io-lifetimes and tempfile
-    { name = "windows-sys" },
 ]
 skip-tree = []
-wildcards = "warn"
+wildcards = "deny"
 
 [sources]
 allow-git = []
