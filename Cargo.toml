@@ -9,7 +9,7 @@ include = [
 license = "MPL-2.0"
 name = "passivized_htpasswd"
 repository = "https://github.com/iamjpotts/passivized_htpasswd"
-rust-version = "1.60"
+rust-version = "1.68"
 version = "0.0.4-alpha"
 
 [dependencies]
