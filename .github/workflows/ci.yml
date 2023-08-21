@@ -32,7 +32,7 @@ jobs:
         os:
           - macOS-latest
         toolchain:
-          - "1.60"
+          - "1.68"
           - stable
     runs-on: ${{ matrix.os }}
     steps:
@@ -53,7 +53,7 @@ jobs:
         os:
           - ubuntu-20.04
         toolchain:
-          - "1.60"
+          - "1.68"
           - beta
           - nightly
           - stable
