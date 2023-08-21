@@ -21,4 +21,4 @@ pwhash = "1.0"
 thiserror = "1.0"
 
 [dev-dependencies]
-tempfile = "3.3"
+tempfile = "~3.6"
