@@ -11,7 +11,6 @@ jobs:
     strategy:
       matrix:
         os:
-          - macOS-latest
           - ubuntu-20.04
         toolchain:
           - stable
@@ -23,7 +22,7 @@ jobs:
           toolchain: ${{ matrix.toolchain }}
       - run: cargo install cargo-deny
       - run: cargo deny check
-    timeout-minutes: 30
+    timeout-minutes: 15
 
   test-mac:
     name: Cargo test on Mac
@@ -44,7 +43,7 @@ jobs:
       - run: cargo clippy
       - run: cargo test --no-run
       - run: cargo test --no-fail-fast
-    timeout-minutes: 30
+    timeout-minutes: 15
 
   test-nix:
     name: Cargo test on nix
@@ -55,7 +54,6 @@ jobs:
         toolchain:
           - "1.68"
           - beta
-          - nightly
           - stable
     runs-on: ${{ matrix.os }}
     steps:
@@ -68,4 +66,4 @@ jobs:
       - run: cargo clippy
       - run: cargo test --no-run
       - run: cargo test --no-fail-fast
-    timeout-minutes: 30
+    timeout-minutes: 15
