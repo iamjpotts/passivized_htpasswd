@@ -10,11 +10,10 @@ license = "MPL-2.0"
 name = "passivized_htpasswd"
 repository = "https://github.com/iamjpotts/passivized_htpasswd"
 rust-version = "1.68"
-version = "0.0.6-alpha"
+version = "0.0.6"
 
 [dependencies]
 bcrypt = "0.15"
-# Version 2.0 requires unstable features
 indexmap = "2.1"
 # This uses an older version of the blowfish crate than the current version of bcrypt does,
 # but the pwhash author has unreleased commits that update bcrypt.
@@ -22,4 +21,4 @@ pwhash = "1.0"
 thiserror = "1.0"
 
 [dev-dependencies]
-tempfile = "~3.9"
+tempfile = "3.9"
