@@ -26,7 +26,6 @@ use std::io;
 use std::path::Path;
 use bcrypt::{DEFAULT_COST, Version};
 use indexmap::IndexMap;
-use indexmap::map::Iter;
 
 use crate::errors::HtpasswdError;
 
@@ -150,11 +149,21 @@ impl Htpasswd {
 
 impl ToString for Htpasswd {
     fn to_string(&self) -> String {
-        let entries : Iter<String, String> = self.entries.iter();
+        let capacity = self.entries
+            .iter()
+            .map(|(u, p)| 2 + u.len() + p.len())
+            .sum();
 
-        entries
-            .map(|(u, p)| format!("{}:{}\n", u, p))
-            .collect()
+        let mut result = String::with_capacity(capacity);
+
+        for (u, p) in &self.entries {
+            result.push_str(u);
+            result.push(':');
+            result.push_str(p);
+            result.push('\n');
+        }
+
+        result
     }
 }
 
