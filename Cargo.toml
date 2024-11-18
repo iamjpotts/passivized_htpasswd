@@ -13,7 +13,7 @@ rust-version = "1.68"
 version = "0.0.6"
 
 [dependencies]
-bcrypt = "0.15"
+bcrypt = "0.16"
 indexmap = "2.1"
 # This uses an older version of the blowfish crate than the current version of bcrypt does,
 # but the pwhash author has unreleased commits that update bcrypt.
